@@ -255,47 +255,66 @@ h2 {
 
 .skills {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-    align-items: start;
+    gap: 40px
 }
 
-.skill-panel {
-    background: var(--white);
-    border: 2px solid var(--line);
-    border-top: 5px solid var(--blue);
-    border-radius: 12px;
-    padding: 24px 26px 28px;
-    box-shadow: var(--shadow-sm);
+.skills h3 {
+    margin-bottom: 16px;
+    font-size: 1.2rem
 }
 
-.skill-panel h3 {
-    font-size: 1.2rem;
-    margin-bottom: 18px;
-}
-
-.skill-list {
+.skill-grid {
     list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.skill-card {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.skill-list li {
-    padding: 8px 18px;
-    background: var(--pale);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 150px;
+    padding: 24px 16px;
+    text-align: center;
+    background: var(--white);
     color: var(--navy);
-    border: 1.5px solid var(--blue);
-    border-radius: 999px;
-    font-size: .95rem;
-    font-weight: 600;
-    transition: background .25s, color .25s, transform .25s;
+    border: 2px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    cursor: default;
+    transition: transform .25s, background .25s, color .25s, border-color .25s, box-shadow .25s;
 }
 
-.skill-list li:hover {
+.skill-card svg {
+    width: 40px;
+    height: 40px;
+    fill: none;
+    stroke: var(--blue);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke .25s;
+}
+
+.skill-card span {
+    font-weight: 700;
+    font-size: .98rem;
+    line-height: 1.3;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
     background: var(--blue);
+    border-color: var(--blue);
     color: var(--white);
-    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.skill-card:hover svg {
+    stroke: var(--white);
 }
 
 .projects {
@@ -590,7 +609,8 @@ footer a:hover {
 
     .skill-card {
         min-height: 130px;
-        padding: 18px 10px
+        padding: 18px 10px;
+        font-size: .95rem
     }
 }
 
